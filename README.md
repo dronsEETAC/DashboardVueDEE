@@ -20,5 +20,5 @@ The basics of MQTT can be found here:
 This is a good example to start using MQTT (using a public broker):    
 [Example](https://www.youtube.com/watch?v=kuyCd53AOtg) 
 
-A nice course on Tkinter can be found here:   
-[Tkinter](https://www.youtube.com/watch?v=YXPyB4XeYLA)   
+A nice course on Vue.js can be found here:   
+[Vue.js](https://www.youtube.com/playlist?list=PL64O0POFYjHoeq8dfP-XYPCoNlehSiR_B)   
