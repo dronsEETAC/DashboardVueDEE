@@ -73,8 +73,6 @@
 <script>
 import { onMounted, defineComponent, ref, inject } from 'vue'
 import Swal from 'sweetalert2'
-import Parameters from './Parameters.vue'
-import Maps from './Maps.vue'
 
 export default defineComponent({
 

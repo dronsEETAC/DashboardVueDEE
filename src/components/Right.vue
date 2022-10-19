@@ -3,7 +3,7 @@
         <b-card-group>
                 <b-card border-variant = "dark" header-border-variant = "dark" header = "LEDs actions"
                         header-bg-variant = "success" align = "center" 
-                        style = "margin-left: 30%; margin-right: 30%; margin-top: 1%; margin-bottom: 2%">
+                        style = "margin-left: 30%; margin-right: 30%; margin-top: 22%; margin-bottom: 2%">
                 <b-card-text>Section for controling the LEDs in the drone</b-card-text>
             </b-card>
         </b-card-group>
@@ -64,7 +64,6 @@ export default {
     .rightStyle {
         border-style: solid;
         border-color: blue;
-        height: 50%;
     }
 
 </style>

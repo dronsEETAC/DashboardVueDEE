@@ -3,8 +3,10 @@
   <button v-if = "connected" class = "myButtonDisconnect" @click = "toggle">Disconnect</button>
   <div v-if = "connected" class ="main">
     <Top></Top>
-    <Left></Left>
-    <Right></Right>
+    <div style = "display: flex">
+      <Left style = "width: 50%"></Left>
+      <Right style = "width: 50%"></Right>
+    </div>
   </div>
 </template>
 

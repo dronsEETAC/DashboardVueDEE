@@ -15,14 +15,14 @@
         <div>
             <b-button style = "width: 20%; margin-left: 40%" @click = "takePicture" variant = "danger">Take a picture</b-button>
         </div>
-        <div style = "display:flex;">
+        <div style = "display: flex;">
             <div class = "buttonColumn">
                 <b-button style = "margin: 1%" @click = "mode = 'gray'" variant = "info">Gray</b-button>
                 <b-button style = "margin: 1%" @click = "mode = 'canny'" variant = "success">Canny</b-button>
                 <b-button style = "margin: 1%" @click = "mode = 'normal'" variant = "warning">Normal</b-button>
             </div>
             <div style ="width:70%">
-                <canvas style = "margin-left: 3%; margin-top: 3%; margin-bottom: 6%; width: 600px; height: 500px; border-style: solid"
+                <canvas style = "margin-left: 10%; margin-top: 3%; margin-bottom: 3%; width: 500px; height: 400px; border-style: solid"
                 id = "output"></canvas>
             </div> 
         </div>
@@ -103,11 +103,11 @@ export default defineComponent({
   flex-direction: column;
   padding-top: 20px;
   height: 200px;
-  width: 10%;
+  width: 15%;
   border: 3px solid purple;
   padding: 10px;
   border-radius: 25px;
   margin-top: 9%;
-  margin-left: 24%;
+  margin-left: 5%;
 }
 </style>
