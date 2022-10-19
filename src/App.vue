@@ -12,9 +12,9 @@
 
 <script>
 import { defineComponent, ref, inject } from 'vue';
-import Top from './components/Top.vue';
-import Left from './components/Left.vue';
-import Right from './components/Right.vue';
+import Top from './components/Top_AutopilotActions.vue';
+import Left from './components/Left_CameraActions.vue';
+import Right from './components/Right_LEDsActions.vue';
 export default defineComponent({
   name: 'App',
   components: {
