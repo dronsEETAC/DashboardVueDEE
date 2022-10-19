@@ -1,28 +1,23 @@
 <template>
     <div class="topStyle">
-        <b-card-group>
-                <b-card border-variant = "dark" header-border-variant = "dark" header = "Autopilot actions"
-                        header-bg-variant = "success" align = "center" 
-                        style = "margin-left: 35%; margin-right: 35%; margin-top: 1%;">
-                <b-card-text>Section for connecting to the drone and get different information</b-card-text>
-            </b-card>
-        </b-card-group>
-        <div style = "display: flex; margin-left: 45.5%">
-            <b-button v-if = "!connected" style = "margin: 1%; width: 15%" variant = "dark" 
-            @click = "armDrone">ARM DRONE</b-button>
-            <b-button v-if = "connected" style = "margin: 1%; width: 15%" variant = "dark" 
-            @click = "disarmDrone">DISARM DRONE</b-button>
+        <div style = "width: 33.3%; height: 18%; margin: 10px; margin-left: 33.3%; border: 3px solid #000; background: #1380A1">
+            <div style = "padding-bottom: 1px; margin-bottom: 2px; font-weight: bold; font-size: 17px; margin-left: 15%;">
+                <h1>Autopilot actions</h1>
+                <h5 style = "margin-left: -9%;">Section for connecting to the drone and get different information</h5>
+            </div>
         </div>
-        <div v-if = "connected" style = "display: flex; margin-left: 25%">
-            <b-button pill style = "margin: 1%; width: 15%" variant = "info" 
-            @click="takeOff">Take off to</b-button>
+        <div style = "display: flex; margin-left: 43.5%;">
+            <button v-if = "!connected" class = "armDisarmDroneButton" @click = "armDrone">ARM DRONE</button>
+            <button v-if = "connected" class = "armDisarmDroneButton"  @click = "disarmDrone">DISARM DRONE</button>
+        </div>
+        <div v-if = "connected" style = "display: flex; margin-left: 19%">
+            <button class = "averageButton" @click="takeOff">Take off to</button>
             <b-input-group style = "width: 15%; height: 15%; margin-top: 1%" 
             v-model="altitude" size = "md" append = "m">
                 <b-form-input style = "width: 5%; height: 15%; margin-top: 1%" 
                 placeholder = "Target altitude" v-model = "altitude" size = "md"></b-form-input>
             </b-input-group>
-            <b-button pill style = "margin: 1%; width: 15%" variant = "info"
-             @click = "getActualPosition">Get actual position</b-button>
+            <button class = "averageButton" @click = "getActualPosition">Get actual position</button>
             <b-input-group style = "width: 15%; height: 15%; margin-top: 1%" size = "md">
                 <b-form-input disabled = "True" style = "width: 5%; height: 15%; margin-top: 1%" 
                 v-model = "current_lat" size = "md"></b-form-input>
@@ -30,16 +25,14 @@
                 v-model = "current_lng" size = "md"></b-form-input>
             </b-input-group>
         </div>
-        <div v-if = "connected" style = "display: flex; margin-left: 25%">
-            <b-button pill style = "margin: 1%; width: 15%" variant = "info" 
-            @click = "getHeading">Get drone heading</b-button>
+        <div v-if = "connected" style = "display: flex; margin-left: 19%">
+            <button class = "averageButton" @click = "getHeading">Get drone heading</button>
             <b-input-group style = "width: 15%; height: 15%; margin-top: 1%" 
             disabled = "True" size = "md" append = "º">
                 <b-form-input style = "width: 5%; height: 15%; margin-top: 1%" 
                 disabled = "True" v-model = "heading" size = "md"></b-form-input>
             </b-input-group>
-            <b-button pill style = "margin: 1%; width: 15%" variant = "info" 
-            @click = "goToPosition">Go to position</b-button>
+            <button class = "averageButton" @click = "goToPosition">Go to position</button>
             <b-input-group style = "width: 15%; height: 15%; margin-top: 1%" size = "md">
                 <b-form-input style = "width: 5%; height: 15%; margin-top: 1%" 
                 v-model = "goToLat" size = "md"></b-form-input>
@@ -47,20 +40,17 @@
                 v-model = "goToLng" size = "md"></b-form-input>
             </b-input-group>
         </div>
-        <div v-if = "connected" style = "display: flex; margin-left: 25%">
-            <b-button pill style = "margin: 1%; width: 15%" variant = "info" 
-            @click = "getGroundSpeed">Get drone ground speed</b-button>
+        <div v-if = "connected" style = "display: flex; margin-left: 19%">
+            <button class = "averageButton" @click = "getGroundSpeed">Get drone ground speed</button>
             <b-input-group style = "width: 15%; height: 15%; margin-top: 1%" 
             disabled = "True" size = "md" append = "m/s">
                 <b-form-input style = "width: 5%; height: 15%; margin-top: 1%" 
                 disabled = "True" v-model = "groundSpeed" size = "md"></b-form-input>
             </b-input-group>
-            <b-button pill style = "margin: 1%; width: 30%; margin-top: 1%;" variant = "info" 
-            @click = "returnToLaunch">Return to launch</b-button>
+            <button class = "averageButton"  @click = "returnToLaunch">Return to launch</button>
         </div>
-        <div v-if = "connected" style = "display: flex; margin-left: 25%">
-            <b-button pill style = "margin: 1%; width: 15%" variant = "info" 
-            @click = "getCurrentAltitude">Get drone altitude</b-button>
+        <div v-if = "connected" style = "display: flex; margin-left: 19%">
+            <button class = "averageButton" @click = "getCurrentAltitude">Get drone altitude</button>
             <b-input-group style = "width: 15%; height: 15%; margin-top: 1%" 
             disabled = "True" v-model = "currentAltitude" size = "md" append = "m">
                 <b-form-input style = "width: 5%; height: 15%; margin-top: 1%" 
@@ -192,7 +182,78 @@ export default defineComponent({
 
 <style>
     .topStyle {
-        border: 5px solid red;
+        border: 5px solid black;
         height: 50%;
+        background-color: #fafcaf;
     }
+
+    .armDisarmDroneButton{
+        margin: 1%; 
+        width: 20%;
+        background-color: white;
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+        cursor: pointer;
+        border: 3px solid;
+        padding: 0.25em 0.5em;
+        box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+        position: relative;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .armDisarmDroneButton:active {
+        box-shadow: 0px 0px 0px 0px;
+        top: 5px;
+        left: 5px;
+    }
+
+    @media (min-width: 768px) {
+        .armDisarmDroneButton {
+            padding: 0.25em 0.75em;
+        }
+    }
+
+    .averageButton {
+        margin: 1.2%;
+        width: 20%;
+        padding: 10px 40px;
+        border-radius: 50px;
+        border: 0;
+        background-color: cyan;
+        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 15px;
+        transition: all .5s ease;
+        color: bold black;
+        font-weight: bold;
+    }
+
+    .averageButton:hover {
+        letter-spacing: 3px;
+        background-color: rgb(25, 0, 255);
+        color: hsl(0, 0%, 100%);
+        box-shadow: blue 0px 7px 29px 0px;
+    }
+
+    .averageButton:active {
+        letter-spacing: 3px;
+        background-color: hsl(261deg 80% 48%);
+        color: hsl(0, 0%, 100%);
+        box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+        transform: translateY(10px);
+        transition: 100ms;
+    }
+
+    h1 {
+        margin-left: 17.5%;
+    }
+
+
 </style>

@@ -1,11 +1,11 @@
 <template>
     <div class = "leftStyle">
-        <b-card-group>
-            <b-card border-variant = "dark" header-border-variant = "dark" header = "Camera actions"
-                    header-bg-variant = "success" align = "center" style = "margin-left: 35%; margin-right: 35%; margin-top: 1%;">
-                <b-card-text>Section for getting an image of video stream from the drone</b-card-text>
-            </b-card>
-        </b-card-group>
+        <div style = "width: 70%; height: 15%; margin: 10px; margin-top: 1%; margin-left: 15%; border: 3px solid #000; background: #1380A1">
+            <div style = "padding-bottom: 1px; margin-bottom: 2px; font-weight: bold; font-size: 17px; margin-left: 17%;">
+                <h1>Camera actions</h1>
+                <h5 style = "margin-left: -8%;">Section for getting an image or a video stream from the drone</h5>
+            </div>
+        </div>
         <div>
             <b-button style = "width: 20%; margin: 2%; margin-left: 29%" 
             @click = "startVideoStream" variant = "success">Start video stream</b-button>
@@ -96,6 +96,7 @@ export default defineComponent({
     
 .leftStyle {
   border: 5px solid black;
+  background-color: #54d6c1;
 }
 .buttonColumn {
   display: flex;
@@ -104,7 +105,7 @@ export default defineComponent({
   padding-top: 20px;
   height: 200px;
   width: 15%;
-  border: 3px solid purple;
+  border: 3px solid black;
   padding: 10px;
   border-radius: 25px;
   margin-top: 9%;
