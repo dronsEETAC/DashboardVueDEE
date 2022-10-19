@@ -8,6 +8,14 @@ The Dashboard does a bunch of things, including:
 - Showing the altitude, the position, the speed, etc.
 - Starting/Stopping a LED sequence in the drone
 
+To run the Dashboard, first we need to install all the packages:
+
+`npm install`
+
+Then, we run the server:
+
+`npm run serve`
+
 ## Demo 
 
 [Drone Engineering Ecosystem demo](https://www.youtube.com/playlist?list=PL64O0POFYjHpXyP-T063RdKRJXuhqgaXY)
