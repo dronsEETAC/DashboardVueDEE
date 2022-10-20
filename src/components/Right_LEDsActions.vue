@@ -1,9 +1,9 @@
 <template>
     <div class="rightStyle">
-        <div style = "width: 70%; height: 13%; margin: 5%; margin-top: 19%; margin-left: 17%; border: 3px solid #000; background: #1380A1">
-            <div style = "padding-bottom: 1px; margin-bottom: 2px; font-weight: bold; font-size: 17px; margin-left: 17%;">
+        <div style = "width: 70%; height: 13%; margin: 5%; margin-top: 19%; margin-left: 17%; border: 3px solid #000; background: #1380A1; border-radius: 25px;">
+            <div style = "padding-bottom: 1px; margin-bottom: 2px; font-weight: bold; font-size: 17px; margin-left: 20%;">
                 <h1>LEDs actions</h1>
-                <h5 style = "margin-left: 5%;">Section for controling the LEDs in the dron</h5>
+                <h5 style = "margin-left: 4%;">Section for controling the LEDs in the dron</h5>
             </div>
         </div>
         <div style = "display: flex; margin-left: 20%; margin-right: 20%">

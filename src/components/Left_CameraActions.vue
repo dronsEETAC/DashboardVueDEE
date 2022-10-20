@@ -1,19 +1,19 @@
 <template>
     <div class = "leftStyle">
-        <div style = "width: 70%; height: 13%; margin: 10px; margin-top: 1%; margin-left: 15%; border: 3px solid #000; background: #1380A1">
+        <div style = "width: 70%; height: 13%; margin: 10px; margin-top: 1%; margin-left: 15%; border: 3px solid #000; background: #1380A1; border-radius: 25px;">
             <div style = "padding-bottom: 1px; margin-bottom: 2px; font-weight: bold; font-size: 17px; margin-left: 17%;">
                 <h1>Camera actions</h1>
                 <h5 style = "margin-left: -8%;">Section for getting an image or a video stream from the drone</h5>
             </div>
         </div>
         <div>
-            <button class = "startStreamButton" style = "width: 30%; margin: 2%; margin-left: 18%" 
+            <button class = "button" style = "width: 30%; margin: 2%; margin-left: 18%; background-color: greenyellow;" 
             @click = "startVideoStream">Start video stream</button>
-            <button class = "stopStreamButton" style = "width: 30%; margin: 2%"
+            <button class = "button" style = "width: 30%; margin: 2%; background-color: red;"
             @click = "stopVideoStream">Stop video stream</button>
         </div>
-        <div style = "margin-left: 35%">
-            <button class = "pictureButton" @click = "takePicture">Take a picture</button>
+        <div>
+            <button class = "button" style = "margin-left: 35%; width: 30%; background-color: yellow;" @click = "takePicture">Take a picture</button>
         </div>
         <div style = "display: flex">
             <div class = "buttonColumn">
@@ -111,102 +111,6 @@ export default defineComponent({
         border-radius: 25px;
         margin-top: 9%;
         margin-left: 5%;
-    }
-
-    .pictureButton{
-        margin: 1.2%;
-        width: 42%;
-        padding: 10px 40px;
-        border-radius: 50px;
-        border: 0;
-        background-color: yellow;
-        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-size: 15px;
-        transition: all .5s ease;
-        color: bold black;
-        font-weight: bold;
-    }
-
-    .startStreamButton{
-        margin: 1.2%;
-        width: 42%;
-        padding: 10px 40px;
-        border-radius: 50px;
-        border: 0;
-        background-color: greenyellow;
-        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-size: 15px;
-        transition: all .5s ease;
-        color: bold black;
-        font-weight: bold;
-    }
-
-    .stopStreamButton{
-        margin: 1.2%;
-        width: 42%;
-        padding: 10px 40px;
-        border-radius: 50px;
-        border: 0;
-        background-color: red;
-        box-shadow: rgb(0 0 0 / 5%) 0 0 8px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-size: 15px;
-        transition: all .5s ease;
-        color: bold black;
-        font-weight: bold;
-    }
-
-    .pictureButton:hover {
-        letter-spacing: 3px;
-        background-color: rgb(25, 0, 255);
-        color: hsl(0, 0%, 100%);
-        box-shadow: blue 0px 7px 29px 0px;
-    }
-
-    .pictureButton:active {
-        letter-spacing: 3px;
-        background-color: hsl(261deg 80% 48%);
-        color: hsl(0, 0%, 100%);
-        box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-        transform: translateY(10px);
-        transition: 100ms;
-    }
-
-    .startStreamButton:hover {
-        letter-spacing: 3px;
-        background-color: blue;
-        color: hsl(0, 0%, 100%);
-        box-shadow: blue 0px 7px 29px 0px;
-    }
-
-    .startStreamButton:active {
-        letter-spacing: 3px;
-        background-color: hsl(261deg 80% 48%);
-        color: hsl(0, 0%, 100%);
-        box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-        transform: translateY(10px);
-        transition: 100ms;
-    }
-
-    .stopStreamButton:hover {
-        letter-spacing: 3px;
-        background-color: rgb(25, 0, 255);
-        color: hsl(0, 0%, 100%);
-        box-shadow: blue 0px 7px 29px 0px;
-    }
-
-    .stopStreamButton:active {
-        letter-spacing: 3px;
-        background-color: hsl(261deg 80% 48%);
-        color: hsl(0, 0%, 100%);
-        box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-        transform: translateY(10px);
-        transition: 100ms;
     }
 
     .button{
