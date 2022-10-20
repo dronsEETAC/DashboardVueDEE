@@ -10,7 +10,7 @@
             <button v-if = "!connected" class = "armDisarmDroneButton" @click = "armDrone">ARM DRONE</button>
             <button v-if = "connected" class = "armDisarmDroneButton"  @click = "disarmDrone">DISARM DRONE</button>
         </div>
-        <div v-if = "connected" style = "display: flex; margin-left: 19%">
+        <div v-if = "connected" style = "display: flex; margin-left: 16%">
             <button class = "averageButton" @click="takeOff">Take off to</button>
             <b-input-group style = "width: 15%; height: 15%; margin-top: 1%" 
             v-model="altitude" size = "md" append = "m">
@@ -25,7 +25,7 @@
                 v-model = "current_lng" size = "md"></b-form-input>
             </b-input-group>
         </div>
-        <div v-if = "connected" style = "display: flex; margin-left: 19%">
+        <div v-if = "connected" style = "display: flex; margin-left: 16%">
             <button class = "averageButton" @click = "getHeading">Get drone heading</button>
             <b-input-group style = "width: 15%; height: 15%; margin-top: 1%" 
             disabled = "True" size = "md" append = "º">
@@ -40,7 +40,7 @@
                 v-model = "goToLng" size = "md"></b-form-input>
             </b-input-group>
         </div>
-        <div v-if = "connected" style = "display: flex; margin-left: 19%">
+        <div v-if = "connected" style = "display: flex; margin-left: 16%">
             <button class = "averageButton" @click = "getGroundSpeed">Get drone ground speed</button>
             <b-input-group style = "width: 15%; height: 15%; margin-top: 1%" 
             disabled = "True" size = "md" append = "m/s">
@@ -49,7 +49,7 @@
             </b-input-group>
             <button class = "averageButton"  @click = "returnToLaunch">Return to launch</button>
         </div>
-        <div v-if = "connected" style = "display: flex; margin-left: 19%">
+        <div v-if = "connected" style = "display: flex; margin-left: 16%">
             <button class = "averageButton" @click = "getCurrentAltitude">Get drone altitude</button>
             <b-input-group style = "width: 15%; height: 15%; margin-top: 1%" 
             disabled = "True" v-model = "currentAltitude" size = "md" append = "m">
@@ -221,7 +221,7 @@ export default defineComponent({
 
     .averageButton {
         margin: 1.2%;
-        width: 20%;
+        width: 22%;
         padding: 10px 40px;
         border-radius: 50px;
         border: 0;
