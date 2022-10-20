@@ -1,6 +1,7 @@
 <template>
     <div class = "leftStyle">
-        <div style = "width: 70%; height: 13%; margin: 10px; margin-top: 1%; margin-left: 15%; border: 3px solid #000; background: #1380A1; border-radius: 25px;">
+        <div style = "width: 70%; height: 13%; margin: 10px; margin-top: 1%; margin-left: 15%; 
+        border: 3px solid #000; background: #1380A1; border-radius: 25px;">
             <div style = "padding-bottom: 1px; margin-bottom: 2px; font-weight: bold; font-size: 17px; margin-left: 17%;">
                 <h1>Camera actions</h1>
                 <h5 style = "margin-left: -8%;">Section for getting an image or a video stream from the drone</h5>
@@ -13,17 +14,21 @@
             @click = "stopVideoStream">Stop video stream</button>
         </div>
         <div>
-            <button class = "button" style = "margin-left: 35%; width: 30%; background-color: yellow;" @click = "takePicture">Take a picture</button>
+            <button class = "button" style = "margin-left: 35%; width: 30%; background-color: yellow;" 
+            @click = "takePicture">Take a picture</button>
         </div>
         <div style = "display: flex">
             <div class = "buttonColumn">
-                <button class = "button" style = "margin: 1%; background-color: cyan; width: 95%;" @click = "mode = 'gray'">Gray</button>
-                <button class = "button" style = "margin: 1%; background-color: greenyellow; width: 95%;" @click = "mode = 'canny'">Canny</button>
-                <button class = "button" style = "margin: 1%; background-color: yellow; width: 95%;" @click = "mode = 'normal'">Normal</button>
+                <button class = "button" style = "margin: 1%; background-color: cyan; width: 95%;" 
+                @click = "mode = 'gray'">Gray</button>
+                <button class = "button" style = "margin: 1%; background-color: greenyellow; width: 95%;"
+                @click = "mode = 'canny'">Canny</button>
+                <button class = "button" style = "margin: 1%; background-color: yellow; width: 95%;" 
+                @click = "mode = 'normal'">Normal</button>
             </div>
             <div style ="width:70%">
-                <canvas style = "margin-left: 10%; margin-top: 3%; margin-bottom: 3%; width: 500px; height: 400px; border-style: solid"
-                id = "output"></canvas>
+                <canvas style = "margin-left: 10%; margin-top: 3%; margin-bottom: 3%; width: 500px; 
+                height: 400px; border-style: solid" id = "output"></canvas>
             </div> 
         </div>
     </div>

@@ -1,6 +1,7 @@
 <template>
     <div class="rightStyle">
-        <div style = "width: 70%; height: 13%; margin: 5%; margin-top: 19%; margin-left: 17%; border: 3px solid #000; background: #1380A1; border-radius: 25px;">
+        <div style = "width: 70%; height: 13%; margin: 5%; margin-top: 19%; margin-left: 17%; 
+        border: 3px solid #000; background: #1380A1; border-radius: 25px;">
             <div style = "padding-bottom: 1px; margin-bottom: 2px; font-weight: bold; font-size: 17px; margin-left: 20%;">
                 <h1>LEDs actions</h1>
                 <h5 style = "margin-left: 4%;">Section for controling the LEDs in the dron</h5>
@@ -9,8 +10,8 @@
         <div style = "display: flex; margin-left: 20%; margin-right: 20%">
             <button v-if = "connected" class = "button" style = "margin: 1%; width: 100%; margin-left: 10%; margin-right: 10%"
             @click = "startLedSequence">Start LEDs sequence</button>
-            <button v-if = "!connected" class = "button" style = "margin: 1%; width: 100%; margin-left: 10%; margin-right: 10%; background-color: red;" 
-            @click = "stopLedSequence">Stop LEDs sequence</button>
+            <button v-if = "!connected" class = "button" style = "margin: 1%; width: 100%; margin-left: 10%; margin-right: 10%;
+            background-color: red;" @click = "stopLedSequence">Stop LEDs sequence</button>
         </div>
         <div style = "display: flex; margin-left: 20%; margin-right: 20%">
             <button class = "button" style = "margin: 1%; width: 100%; margin-left: 10%" 
@@ -24,6 +25,7 @@
 
 <script>
 import { inject, ref } from 'vue'
+import Swal from 'sweetalert2'
 
 export default {
   setup() {
@@ -36,6 +38,7 @@ export default {
     function startLedSequence(){
         connected.value = false
         client.publish("dashBoard/LEDsService/startLEDsSequence", "")
+        Swal.fire('Started LEDs sequence!')
     }
 
     function startNsecondsLedSequence(){

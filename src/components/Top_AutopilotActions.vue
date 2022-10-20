@@ -1,6 +1,7 @@
 <template>
     <div class="topStyle">
-        <div style = "width: 33.3%; height: 18%; margin: 10px; margin-left: 33.3%; border: 3px solid #000; background: #1380A1; border-radius: 25px;">
+        <div style = "width: 33.3%; height: 18%; margin: 10px; margin-left: 33.3%; 
+        border: 3px solid #000; background: #1380A1; border-radius: 25px;">
             <div style = "padding-bottom: 1px; margin-bottom: 2px; font-weight: bold; font-size: 17px; margin-left: 15%;">
                 <h1>Autopilot actions</h1>
                 <h5 style = "margin-left: -9%;">Section for connecting to the drone and get different information</h5>
@@ -111,7 +112,14 @@ export default defineComponent({
         }
 
         function takeOff(){
-            Swal.fire('Heading to target altitude!')
+            Swal.fire({
+                title: 'Heading to target altitude!',
+                imageUrl: 'https://media.istockphoto.com/vectors/drone-vector-id928323722?k=20&m'+
+                '=928323722&s=612x612&w=0&h=a4hoXZ6q0ZLcSJEle6kg_g8G8eTdvO20xvFBXOdPDn8=',
+                imageWidth: 800,
+                imageHeight: 400,
+                imageAlt: 'Custom image',
+            })
             client.publish("dashBoard/autopilotService/takeOff", altitude.value)
         }
 
